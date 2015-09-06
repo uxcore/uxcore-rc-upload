@@ -19,9 +19,23 @@ class Demo extends React.Component {
     }
 
     render() {
+        let me = this;
+        let options = {
+            action: "http://demo.nwux.taobao.net/file/upload",
+            data: {a:1},
+            onStart: function(file){
+                console.log('onStart',file.name || file.value);
+            },
+            onSuccess: function(ret) {
+                console.log('onSuccess',ret);
+            },
+            onProgress: function(step) {
+                console.log('onProgress',step);
+            }
+        }
         return (
             <div>
-                <RcUpload/>
+                <RcUpload {...options}/>
             </div>
         );
     }

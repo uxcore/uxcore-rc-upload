@@ -13,5 +13,9 @@
 
 @pager-active-bg:                      @pagination-active-bg;
 @pager-active-color:                   @pagination-active-color;*/
+.kuma-rc-upload .kuma-icon {
+  display: inline-block;
+  vertical-align: top;
+}
 
 /*# sourceMappingURL=RcUpload.css.map */

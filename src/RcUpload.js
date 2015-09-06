@@ -6,6 +6,10 @@
  * All rights reserved.
  */
 
+let Upload = require("rc-upload");
+let {Button, ButtonGroup} = require("uxcore-button");
+let assign = require("object-assign");
+
 class RcUpload extends React.Component {
 
     constructor(props) {
@@ -13,13 +17,30 @@ class RcUpload extends React.Component {
     }
 
     render() {
+        let me = this;
+        let options = {
+            action: me.props.action,
+            data: me.props.data,
+            onStart: me.props.onStart,
+            onSuccess: me.props.onSuccess,
+            onProgress: me.props.onProgress
+        }
         return (
-            <div>uxcore-rc-upload component</div>
+            <div className="kuma-rc-upload">
+                <Upload {...options}>
+                    <Button size={me.props.buttonSize}><i className="kuma-icon kuma-icon-add"></i>点击上传</Button>
+                </Upload>
+            </div>
         );
     }
 }
 
 RcUpload.defaultProps = {
+    buttonSize: "medium",
+    data: {},
+    onStart: function() {},
+    onSuccess: function() {},
+    onProgress: function() {}
 }
 
 
