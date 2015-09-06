@@ -21,9 +21,14 @@ class RcUpload extends React.Component {
         let options = {
             action: me.props.action,
             data: me.props.data,
+            multiple: me.props.multiple,
             onStart: me.props.onStart,
+            onError: me.prips.onError,
             onSuccess: me.props.onSuccess,
             onProgress: me.props.onProgress
+        }
+        if (me.props.accept) {
+            options.accept = me.prosp.accept;
         }
         return (
             <div className="kuma-rc-upload">
@@ -38,7 +43,9 @@ class RcUpload extends React.Component {
 RcUpload.defaultProps = {
     buttonSize: "medium",
     data: {},
+    multiple: false,
     onStart: function() {},
+    onError: function() {},
     onSuccess: function() {},
     onProgress: function() {}
 }
