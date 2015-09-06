@@ -35,4 +35,35 @@ http://uxcore.github.io/uxcore-rc-upload/
 
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|
+|action|string|required|-|上传文件的地址|
+|buttonSize|string|optional|medium|上传按钮的尺寸大小|
+|name|string|optional|-|上传文件的名字|
+|data|object|optional|-|上传附件时随附件一起出入的参数|
+|onStart|function|optional|-|上传开始前出发|
+|onError|function|optional|-|出错时触发|
+|onSuccess|function|optional|-|上传完成时触发|
+|onProgress|function|optional|-|上传中触发|
+|multiple|function|optional|false|是否支持多文件上传，只支持到 IE10+|
+
+### onStart 传入参数
+
+1. file upload file object
+
+
+### onError 传入参数
+
+1. err: request error message
+2. responce: request responce, not support on iframeUpload
+3. file: upload file object
+
+
+### onSuccess 传入参数
+
+1. result: response data
+2. file: upload file object
+
+### onProgress 传入参数
+
+1. step: XMLHttpRequestProgressEvent
+2. file: upload file object
 

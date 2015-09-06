@@ -23,13 +23,12 @@ class RcUpload extends React.Component {
             data: me.props.data,
             multiple: me.props.multiple,
             onStart: me.props.onStart,
-            onError: me.prips.onError,
+            onError: me.props.onError,
             onSuccess: me.props.onSuccess,
             onProgress: me.props.onProgress
         }
-        if (me.props.accept) {
-            options.accept = me.prosp.accept;
-        }
+        !!me.props.accept && (options.accept = me.props.accept);
+        !!me.props.name && (options.name = me.props.name);
         return (
             <div className="kuma-rc-upload">
                 <Upload {...options}>
