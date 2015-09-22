@@ -7,7 +7,7 @@
  */
 
 let Upload = require("rc-upload");
-let {Button, ButtonGroup} = require("uxcore-button");
+let Button = require("uxcore-button");
 let assign = require("object-assign");
 
 class RcUpload extends React.Component {

@@ -21,7 +21,7 @@ class Demo extends React.Component {
     render() {
         let me = this;
         let options = {
-            action: "http://demo.nwux.taobao.net/file/upload",
+            action: "/upload",
             data: {a:1},
             onStart: function(file){
                 console.log('onStart',file.name || file.value);
@@ -30,7 +30,13 @@ class Demo extends React.Component {
                 console.log('onSuccess',ret);
             },
             onProgress: function(step) {
+                console.log(arguments);
                 console.log('onProgress',step);
+            },
+            onError: function(err, res, file) {
+                console.log(err);
+                console.log(res);
+                console.log(file.name);
             }
         }
         return (
