@@ -32,7 +32,7 @@ class RcUpload extends React.Component {
         return (
             <div className="kuma-rc-upload">
                 <Upload {...options}>
-                    <Button size={me.props.buttonSize}><i className="kuma-icon kuma-icon-add"></i>点击上传</Button>
+                    <Button size={me.props.buttonSize}><i className="kuma-icon kuma-icon-add"></i>{me.props.buttonText}</Button>
                 </Upload>
             </div>
         );
@@ -43,6 +43,7 @@ RcUpload.defaultProps = {
     buttonSize: "medium",
     data: {},
     multiple: false,
+    buttonText: '点击上传',
     onStart: function() {},
     onError: function() {},
     onSuccess: function() {},
