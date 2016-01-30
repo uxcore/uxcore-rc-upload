@@ -35,6 +35,7 @@ http://uxcore.github.io/uxcore/
 |onSuccess|function|optional|-|上传完成时触发|
 |onProgress|function|optional|-|上传中触发|
 |multiple|function|optional|false|是否支持多文件上传，只支持到 IE10+|
+|buttonText|string|optional|'点击上传'|点击上传|
 
 ### onStart 传入参数
 
